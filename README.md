@@ -1,1 +1,1 @@
-# Trustly-Front-End-Challenge
+# Trustly Front-End Challenge
