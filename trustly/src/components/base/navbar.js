@@ -11,9 +11,9 @@ export default function Navbar(props) {
     }
     if (currentLocation.indexOf('/success') !== -1) {
       return "Review and Confirmation"
-     } else {
+    } else {
       return "Checkout"
-     } 
+    } 
   }
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Navbar(props) {
             {currentLocation !== '/' &&
               <Link to='/' className="bg-gray-500 items-center flex rounded-lg shadow px-1 pr-2 py-1 font-bold text-md">
                 <svg className="h-8 w-8" viewBox="0 0 16 16"><g fill="black"><path fill-rule="evenodd" d="M7.854 4.646a.5.5 0 0 1 0 .708L5.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/><path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h6.5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/></g></svg>
-                Voltar
+                Back
               </Link>
             }
           </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Product(props) {
   const { product } = props
-  const { id, description, color, price, currency, thumbnailURL, maxresURL } = product
+  const { id, description, price, thumbnailURL } = product
 
   return (
     <div className="my-6">
@@ -39,7 +39,7 @@ export default function Product(props) {
             </div>
               
             <div className="mt-4 mx-2 my-2">
-              <Link to={`/checkout/${id}`} > <button type="button" className="bg-green-700 text-white px-4 py-2 rounded-lg w-full focus:outline-none">
+              <Link to={`/checkout/${id}`}><button type="button" className="bg-green-700 text-white px-4 py-2 rounded-lg w-full focus:outline-none">
                 Add to cart
               </button></Link>
             </div>

@@ -4,8 +4,6 @@ import { useHistory } from 'react-router-dom'
 import ProgressBar from '../components/misc/ProgressBar'
 import { BankButton, PaymentButton } from '../components/base/Buttons'
 
-
-
 export default function Checkout(props) {
   const [ product, setProduct ] = useState({})
   const { id: itemId } = props.match.params
@@ -20,36 +18,35 @@ export default function Checkout(props) {
         console.log(item)
       }
     )
-    const script = document.createElement('script');
-    script.src = "https://sandbox.paywithmybank.com/start/scripts/pwmb.js?accessId=D61EC9BAF0BB369B9438";
-    script.async = true;
-    document.body.appendChild(script);
+    const script = document.createElement('script')
+    script.src = "https://sandbox.paywithmybank.com/start/scripts/pwmb.js?accessId=D61EC9BAF0BB369B9438"
+    script.async = true
+    document.body.appendChild(script)
   }, [])
 
-
-    function ContinueClick() {
-      window.PayWithMyBank.addPanelListener(function(command, event) {
-        if (command === 'event' && event.type === 'new_location') {
-          if (event.data.indexOf('#success') === 0) {
-            history.push(`/checkout/success/${product.id}`)
-          } 
-          return false;
-        }
-      });
+  function ContinueClick() {
+    window.PayWithMyBank.addPanelListener(function(command, event) {
+      if (command === 'event' && event.type === 'new_location') {
+        if (event.data.indexOf('#success') === 0) {
+          history.push(`/checkout/success/${product.id}`)
+        } 
+        return false
+      }
+    })
    
-      window.PayWithMyBank.establish({
-        accessId: 'D61EC9BAF0BB369B9438',
-        merchantId: '1004314986',
-        metadata: { demo: 'enabled' },
-        currency: product.currency,
-        paymentType: 'Deferred',
-        amount: product.price,
-        description: 'barcelos.lucas@gmail.com',
-        merchantReference: '123456',
-        returnUrl: '#success',
-        cancelUrl: '#cancel'
-      });
-    }
+    window.PayWithMyBank.establish({
+      accessId: 'D61EC9BAF0BB369B9438',
+      merchantId: '1004314986',
+      metadata: { demo: 'enabled' },
+      currency: product.currency,
+      paymentType: 'Deferred',
+      amount: product.price,
+      description: 'barcelos.lucas@gmail.com',
+      merchantReference: '123456',
+      returnUrl: '#success',
+      cancelUrl: '#cancel'
+    })
+  }
 
   return (
     <>
@@ -106,13 +103,11 @@ export default function Checkout(props) {
         </div>
 
         <div className="mt-4">
-          <div className="">
-            <BankButton 
-              placeholder="Online Banking"
-              src="/assets/banks.png"
-              alt="Online Banking"
-            />
-          </div>
+          <BankButton 
+            placeholder="Online Banking"
+            src="/assets/banks.png"
+            alt="Online Banking"
+          />
           <PaymentButton
             placeholder="Card payment"
             src="/assets/cards.png"
@@ -133,7 +128,6 @@ export default function Checkout(props) {
 
       </div>
     </div>
-  
     </>
   )
 }

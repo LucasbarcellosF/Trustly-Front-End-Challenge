@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function ProgressBar(props) {
   const { fill, className } = props
+  
   return (
     <div className="m-auto w-full justify-between hidden sm:flex">
       <div className="absolute max-w-3xl z-0 ml-2 w-full border-t-2 my-2 hidden sm:block" style={{maxWidth: "740px"}}></div>

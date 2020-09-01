@@ -16,8 +16,6 @@ export default function Success(props) {
     )
   }, [])
 
-
-
   return (
     <>
     <div className="mt-20 max-w-3xl m-auto">
@@ -28,7 +26,6 @@ export default function Success(props) {
       <div className="col-span-1">
         <img className="rounded-lg object-cover w-full h-full" src={product.maxresURL} alt="" style={{maxHeight: '633px', maxWidth: '532px'}}/>
       </div>
-
       <div className="shadow w-full bg-gray-100 p-6 rounded-lg">
         <div className="grid grid-cols-2 justify-between">
           <div className="col-span-1">
@@ -69,8 +66,7 @@ export default function Success(props) {
           </div>
         </div>
       </div>
-    </div>
-  
+    </div>  
     </>
   )
 }
