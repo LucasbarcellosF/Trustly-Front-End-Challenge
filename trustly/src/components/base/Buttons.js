@@ -16,7 +16,7 @@ function BankButton(props) {
   const { placeholder, src, alt } = props
 
   return (
-    <fieldset className="w-full bg-white cursor-pointer rounded-lg shadow mb-3 h-20 items-center hover:shadow-outline">
+    <fieldset className="w-ful shadow-outline bg-white cursor-pointer rounded-lg mb-3 h-20 items-center hover:shadow-outline">
       <legend className="bg-yellow-400 rounded-md px-3 py-auto text-gray-700 font-bold text-xs ml-8">Save $10</legend>
       <div className="flex justify-between text-left px-4 py-2 sm:py-0 md:py-2 lg:py-3 items-center content-center">
         <label className="text-sm sm:text-xl text-gray-600">{placeholder}</label>

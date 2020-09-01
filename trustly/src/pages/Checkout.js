@@ -73,10 +73,9 @@ export default function Checkout(props) {
             </div>
             <div className="text-base text-gray-500">
               <p className="mb-1">x1 {product.color} size 41</p>
-              <p>item id #{product.id}</p>
+              <p>Item #{product.id}</p>
             </div>
           </div>
-
           <div className="col-span-1">
             <div className="mb-4">
               <label className="text-xl">Delivery details</label>
@@ -95,8 +94,8 @@ export default function Checkout(props) {
                   <p className="text-base text-gray-500">Delivery included</p>
                 </div>
               </div>
-              <div className="self-center ml-4">
-                <span className="text-4xl">{product.currency} {product.price}</span>
+              <div className="self-center ml-4 flex">
+                <span className="text-xl">{product.currency} {product.price}</span>
               </div>
             </div>
           </div>
